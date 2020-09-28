@@ -12,11 +12,11 @@ featured: false
 draft: false
 ---
 
-Andy Wheeler has a [blog post](https://andrewpwheeler.com/2015/04/04/some-more-on-network-distances-vs-geographic-distances-intra-city/) comparing geographic distance (as the crow flies) to network distance (following the road network). The tl;dr; is that in Albany, NY, the correlation beween network distance and geographic distance is really high (0.94). As you'd expect the network distance is always larger than the geographic distance, and this becomes a bit more evident for longer routes.^[Outliers for very short routes are likely due to one-way streets: the geographic distance between A and B is very short, but you have to take quite a detour on the road network due to one-way traffic.]
+Andy Wheeler has a [blog post](https://andrewpwheeler.com/2015/04/04/some-more-on-network-distances-vs-geographic-distances-intra-city/) comparing geographic distance (as the crow flies) to network distance (following the road network). The tl;dr; is that in Albany, NY, the correlation beween network distance and geographic distance is really high (0.94). As you'd expect the network distance is always larger than the geographic distance, and this becomes a bit more evident for longer routes.^[1]
 
 Based on his results, and depending on the application, perhaps we can just calculate Euclidean distances between two points rather than going the complicated route of using network distance calculations (e.g. by using the Google API or ArcGIS). One example is Near Repeat victimization, in which the spatial and temporal distances between pairs of crimes are used to detect space-time interaction (i.e. that houses nearby a house that was burglarized have a higher chance to also be targets for a short period after the first victimization). See [here](https://www.woutersteenbeek.nl/software/nearrepeat/) for my R package on Near Repeat analysis and [here](https://www.woutersteenbeek.nl/publication/steenbeek-wouter-simulation-2021/) for a teaser on a chapter on mechanisms of Near Repeat in [this book](https://www.routledge.com/Agent-Based-Modelling-for-Criminological-Theory-Testing-and-Development/Elffers-Gerritsen/p/book/9780367228521).
 
-However, I wondered if his findings generalize to other areas. In particular, being from the Netherlands where many roads aren't in a neat [block layout](https://en.wikipedia.org/wiki/Taxicab_geometry), are the correlations comparable? In this post, I use R to analyze how geometric distance and road distance compare for the 4 largest municipalities of the Netherlands: Amsterdam, Rotterdam, The Hague and Utrecht.^[*The Hague* is the anglicized version of *Den Haag*, which is what the Dutch call the city. The city's official name, however, is *'s-Gravenhage*, which is also the name in the shapefiles and statistics provided by Statistics Netherlands.] I use R because it's free and I prefer to stay within the same (programming) language to not disrupt workflow.
+However, I wondered if his findings generalize to other areas. In particular, being from the Netherlands where many roads aren't in a neat [block layout](https://en.wikipedia.org/wiki/Taxicab_geometry), are the correlations comparable? In this post, I use R to analyze how geometric distance and road distance compare for the 4 largest municipalities of the Netherlands: Amsterdam, Rotterdam, The Hague and Utrecht.^[2] I use R because it's free and I prefer to stay within the same (programming) language to not disrupt workflow.
 
 > **tl;dr;**  Geographic distance and Road distance are highly correlated in the four largest municipalities of the Netherlands.
 
@@ -28,7 +28,7 @@ My approach is the same for all municipalities:
 
 2. From the [Nationaal Wegenbestand](https://nationaalwegenbestand.nl/) (National Roadfile) of [Rijkswaterstaat](https://www.rijkswaterstaat.nl) (Ministry of Infrastructure and Water Management) I select the roads that intersect with the municipality outline (including a buffer area). This shapefile of roads is converted to a graph (network object).
 
-3. Next I take a sample of 2000 pairs of intersections and I identify the shortest path along the road network for each of these node-pairs.^[Andy uses a slightly different approach. Of all street segments and intersections in Albany, he first selected the 2,640 street segments and intersections that had 1 reported crime between 2000 through 2013. He argues this is a pretty good proxy for places where people are actually located in the city, so places where people might actually travel from/to. I don't have access to crime data of such detailed spatial scale for the Netherlands, but I could include other data sources to accomplish the same thing. In a follow-up to this post, I may dive into the street segment data some more to not sample from all street segments randomly, but according to where people are most likely to travel to and from.]
+3. Next I take a sample of 2000 pairs of intersections and I identify the shortest path along the road network for each of these node-pairs.^[3]
 
 4. For these shortest-paths-along-the-road-network, I calculate the total length (i.e., the distance between two nodes along the road network), as well as the geographic distance between these nodes. Actually, I calculate the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) because at these relatively short distances we don't have to worry about the [curvature of the Earth](https://en.wikipedia.org/wiki/Geographical_distance).
 
@@ -371,7 +371,7 @@ path_graph %>%
 ## 5019.39 [m]
 ```
 
-The Euclidean distance is of course calculated by $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$.^[I calculate the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) because at these relatively short distances we don't have to worry about the [curvature of the Earth](https://en.wikipedia.org/wiki/Geographical_distance).] I'll create a function `eucl_distance()` that accepts as input two two-column matrices, the first for the XY of starting nodes, and the second for the XY of the end nodes. The Euclidean distance between these two points is:
+The Euclidean distance is of course calculated by $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$.^[4] I'll create a function `eucl_distance()` that accepts as input two two-column matrices, the first for the XY of starting nodes, and the second for the XY of the end nodes. The Euclidean distance between these two points is:
 
 
 ```r
@@ -961,3 +961,10 @@ devtools::session_info()
 ## [1] /Library/Frameworks/R.framework/Versions/4.0/Resources/library
 ```
 
+[^1]: Outliers for very short routes are likely due to one-way streets: the geographic distance between A and B is very short, but you have to take quite a detour on the road network due to one-way traffic.
+
+[^2]: *The Hague* is the anglicized version of *Den Haag*, which is what the Dutch call the city. The city's official name, however, is *'s-Gravenhage*, which is also the name in the shapefiles and statistics provided by Statistics Netherlands.
+
+[^3]: Andy uses a slightly different approach. Of all street segments and intersections in Albany, he first selected the 2,640 street segments and intersections that had 1 reported crime between 2000 through 2013. He argues this is a pretty good proxy for places where people are actually located in the city, so places where people might actually travel from/to. I don't have access to crime data of such detailed spatial scale for the Netherlands, but I could include other data sources to accomplish the same thing. In a follow-up to this post, I may dive into the street segment data some more to not sample from all street segments randomly, but according to where people are most likely to travel to and from.
+
+[^4]: I calculate the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) because at these relatively short distances we don't have to worry about the [curvature of the Earth](https://en.wikipedia.org/wiki/Geographical_distance).

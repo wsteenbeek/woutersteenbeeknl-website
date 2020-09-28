@@ -114,7 +114,7 @@ tm_shape(poly_Utrecht_buffer) + tm_borders(col = "white") +
 
 <img src="geometric-road-distance-g4-figures/unnamed-chunk-7-1.png" width="672" />
 
-This maps includes a compass and scale bar but I'll omit these in future maps in this post because I follow Jerry Ratcliffe's [mapping tips](https://twitter.com/Jerry_Ratcliffe/status/1220353890769670153) #1 and #2 :wink:. In fact, I'll also remove map titles and so on to get an even cleaner look. Yeah, yeah, I know. Some mapping puritans will have a fit. Maps without the proper annotations?
+This maps includes a compass and scale bar but I'll omit these in future maps in this post because I follow Jerry Ratcliffe's [mapping tips](https://twitter.com/Jerry_Ratcliffe/status/1220353890769670153) #1 and #2 :wink:. Yeah, yeah, I know. Some mapping puritans will have a fit. Maps without the proper annotations?
 
 <iframe src="https://giphy.com/embed/JRF85A7Bcl2YU" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 

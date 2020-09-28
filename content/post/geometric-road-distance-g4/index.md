@@ -600,8 +600,7 @@ mymap <- tm_shape(poly_Utrecht) + tm_borders(col = "forestgreen", lwd = 3.5) +
 tmap_leaflet(mymap + tm_basemap("Stamen.Toner"), mode = "view", show = FALSE)
 ```
 
-<!--html_preserve--><div id="htmlwidget-366165eb25f6d6d25c30" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-366165eb25f6d6d25c30">{"x":{"url":"geometric-road-distance-g4-figures//widgets/widget_unnamed-chunk-29.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<iframe src="geometric-road-distance-g4-figures/resid_loc.html" width="100%" height="480px"></iframe>
 
 The lowest residuals are for node-pairs that are in the city's downtown area. Many positive residuals---so the shortest path along the road network is quite a bit longer than the mean prediction of the regression line---are when the nodes of a node-pair are separated by major thoroughfares or train tracks. Many refer to node-pairs from/to Vleuten-De Meern and Leidsche Rijn to/from Overvecht and Noordwest. These residuals are likely due to the need to cross the Amsterdam-Rijnkanaal (a canal) on these routes.
 

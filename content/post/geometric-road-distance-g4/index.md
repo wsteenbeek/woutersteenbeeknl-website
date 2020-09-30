@@ -567,7 +567,7 @@ The pearson correlation (`with(lengths_tbl, cor(log(length_eucl), log(length_pat
 
 ## Where are the outliers?
 
-Replicating Andy's post, I use the Studentized residuals of a regression analysis to identify outliers. In contrast to Andy, I plot only the straight lines that have rather high (> 1.5) or low (< -1.5) Studentized residuals and combine these into one interactive map. Because the positive residuals can get very big, I recoded all residuals higher than +5 to +5. I use the Stamen.Toner background map because this black-and-white map shows the important parts of the city but doesn't conflict with the lines drawn.
+Replicating Andy's post, I use the Studentized residuals of a regression analysis to identify outliers. In contrast to Andy, I plot only the straight lines that have rather high (> 1.5) or low (< -1.5) Studentized residuals and combine these into one interactive map. Because the positive residuals can get very big, I recoded all residuals higher than +3 to +3. I use the Stamen.Toner background map because this black-and-white map shows the important parts of the city but doesn't conflict with the lines drawn.
 
 
 ```r

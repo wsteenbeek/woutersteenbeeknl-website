@@ -12,7 +12,11 @@ featured: false
 draft: false
 ---
 
-Andy Wheeler has a [blog post](https://andrewpwheeler.com/2015/04/04/some-more-on-network-distances-vs-geographic-distances-intra-city/) comparing geographic distance (as the crow flies) to network distance (following the road network). The tl;dr; is that in Albany, NY, the correlation beween network distance and geographic distance is really high (0.94). As you'd expect the network distance is always larger than the geographic distance, and this becomes a bit more evident for longer routes.[^1]
+{{% alert note %}}
+This is the first post in a series. The second post is [here](https://www.woutersteenbeek.nl/post/geometric-road-g4-short-distance/).
+{{% /alert %}}
+
+Andy Wheeler has a [blog post](https://andrewpwheeler.com/2015/04/04/some-more-on-network-distances-vs-geographic-distances-intra-city/) comparing geographic distance (as the crow flies) to network distance (following the road network). The tl;dr; is that in Albany, NY, the correlation between network distance and geographic distance is really high (0.94). As you'd expect the network distance is always larger than the geographic distance, and this becomes a bit more evident for longer routes.[^1]
 
 Based on his results, and depending on the application, perhaps we can just calculate Euclidean distances between two points rather than going the complicated route of using network distance calculations (e.g. by using the Google API or ArcGIS). One example is Near Repeat victimization, in which the spatial and temporal distances between pairs of crimes are used to detect space-time interaction (i.e. that houses nearby a house that was burglarized have a higher chance to also be targets for a short period after the first victimization). See [here](https://www.woutersteenbeek.nl/software/nearrepeat/) for my R package on Near Repeat analysis and [here](https://www.woutersteenbeek.nl/publication/steenbeek-wouter-simulation-2021/) for a teaser on a chapter on mechanisms of Near Repeat in [this book](https://www.routledge.com/Agent-Based-Modelling-for-Criminological-Theory-Testing-and-Development/Elffers-Gerritsen/p/book/9780367228521).
 
@@ -266,7 +270,7 @@ graph <- graph %>%
          Y = st_coordinates(geometry)[, 2])
 ```
 
-Calculating the shortest routes (and euclidean distances) between all nodes in the network is a bit too much, as the total number of paths is $n*n$ ($n$ = the number of nodes). Actually, this is only $n*n$ if the path from A to B is different from the path from B to A (for all nodes). Clearly for the geometric path---as the crow flies---the distance from A to B is the same as the distance from B to A. For the shortest network path the distance is also the same if every street is two-way traffic. I'm not doing this exercise with Google's API---that takes into account one-way traffic street segments---but with a shapefile of the Dutch street network, and I will assume every street segment can be traveled both ways. (For within-city/village streets this sort of makes sense in the Netherlands, because the Dutch bike a lot, and I don't know of many one-way bike paths.)
+Calculating the shortest routes (and euclidean distances) between all nodes in the network is a bit too much, as the total number of paths is $n * n$ (with $n$ the number of nodes). Actually, this is only $n*n$ if the path from A to B is different from the path from B to A (for all nodes). Clearly for the geometric path---as the crow flies---the distance from A to B is the same as the distance from B to A. For the shortest network path the distance is also the same if every street is two-way traffic. I'm not doing this exercise with Google's API---that takes into account one-way traffic street segments---but with a shapefile of the Dutch street network, and I will assume every street segment can be traveled both ways. (For within-city/village streets this sort of makes sense in the Netherlands, because the Dutch bike a lot, and I don't know of many one-way bike paths.)
 
 I'm only interested in nodes that start or end in the municipality of Utrecht, but the shortest path between the two might use a street segment just outside the municipality border: for that reason I created the buffer zone around the municipality. I first identify these nodes:
 
@@ -602,7 +606,7 @@ tmap_leaflet(mymap + tm_basemap("Stamen.Toner"), mode = "view", show = FALSE)
 
 <iframe src="geometric-road-distance-g4-figures/resid_loc.html" width="100%" height="480px"></iframe>
 
-The lowest residuals are for node-pairs that are in the city's downtown area. Many positive residuals---so the shortest path along the road network is quite a bit longer than the mean prediction of the regression line---are when the nodes of a node-pair are separated by major thoroughfares or train tracks. Many refer to node-pairs from/to Vleuten-De Meern and Leidsche Rijn to/from Overvecht and Noordwest. These residuals are likely due to the need to cross the Amsterdam-Rijnkanaal (a canal) on these routes.
+Many positive residuals---so when the shortest path along the road network is quite a bit longer than the mean prediction of the regression line---are when the nodes of a node-pair are separated by major thoroughfares or train tracks. Many refer to node-pairs from/to Vleuten-De Meern and Leidsche Rijn to/from Overvecht and Noordwest. These residuals are likely due to the need to cross the Amsterdam-Rijnkanaal (a canal) on these routes.
 
 
 ## The four largest municipalities in the Netherlands?
@@ -850,6 +854,7 @@ library(patchwork) # Easily combine ggplots.
 
 It turns out geographic distance and Road distance are highly correlated in the four largest cities of the Netherlands. I've also done this for *all* municipalities in the Netherlands (code not included here) and correlations are very high across the board.
 
+
 ## R session info
 
 
@@ -961,6 +966,8 @@ devtools::session_info()
 ## [1] /Library/Frameworks/R.framework/Versions/4.0/Resources/library
 ```
 
+
+
 [^1]: Outliers for very short routes are likely due to one-way streets: the geographic distance between A and B is very short, but you have to take quite a detour on the road network due to one-way traffic.
 
 [^2]: *The Hague* is the anglicized version of *Den Haag*, which is what the Dutch call the city. The city's official name, however, is *'s-Gravenhage*, which is also the name in the shapefiles and statistics provided by Statistics Netherlands.
@@ -968,3 +975,4 @@ devtools::session_info()
 [^3]: Andy uses a slightly different approach. Of all street segments and intersections in Albany, he first selected the 2,640 street segments and intersections that had 1 reported crime between 2000 through 2013. He argues this is a pretty good proxy for places where people are actually located in the city, so places where people might actually travel from/to. I don't have access to crime data of such detailed spatial scale for the Netherlands, but I could include other data sources to accomplish the same thing. In a follow-up to this post, I may dive into the street segment data some more to not sample from all street segments randomly, but according to where people are most likely to travel to and from.
 
 [^4]: I calculate the [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance) because at these relatively short distances we don't have to worry about the [curvature of the Earth](https://en.wikipedia.org/wiki/Geographical_distance).
+

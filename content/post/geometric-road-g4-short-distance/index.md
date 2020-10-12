@@ -325,7 +325,7 @@ myplot(crow_vs_path_tbl, log = FALSE)
 
 <img src="geometric-road-g4-short-distance-figures/unnamed-chunk-12-1.png" width="672" />
 
-Here we see differences with my [previous blog post](https://www.woutersteenbeek.nl/post/geometric-road-distance-g4/). At these short distances between two intersections, many of the shortest path along the road network are quite a bit longer than a straight line between them. For reference, I include the red line that indicates x = y.
+Here we see differences with my [previous blog post](https://www.woutersteenbeek.nl/post/geometric-road-distance-g4/). At these short distances between two intersections, many of the shortest path along the road network are quite a bit longer than a straight line between them. For reference, I include the red line that indicates x = y. Pearson's $r$ correlation between the two is 0.31, while Pearson's $r$ for the logged versions of both (excluding zeros) is 0.7.
 
 What jumped out at me from this figure is that the mass of the distribution of euclidean distances is at the higher end of the scale: there seem to be more node pairs with longer distances between them. This is more evident when we plot the same figure using the natural log, or by simply plotting a histogram of the euclidean distances between the 2000 (smaller than 400 meters apart) node pairs:[^1]
 
@@ -374,7 +374,7 @@ plot_histogram(1000) +
 
 (Perhaps I needn't have plotted the first three histograms?) The histograms seem to confirm my interpretation of what's happening in the procedure above. And because 10k is at the very high end of the maximum possible distances (i.e., it's almost the same as not using any buffer), this also explains the shape of the scatter plot in my [first post](https://www.woutersteenbeek.nl/post/geometric-road-distance-g4/).
 
-The question is: does this matter? Because the distribution is dominated by node pairs of pretty long distances (2000 meters and longer), and **for these longer distances** the correlation between euclidean distance and shortest-path length is quite high, I think it does matter. The story is simply more nuanced than the title of my first post.
+The question is: does this matter? Because the distribution is dominated by node pairs of pretty long distances (2000 meters and longer), and **for these longer distances** the correlation between euclidean distance and shortest-path length is quite high, I think it does matter. The story is more nuanced than the title of my first post.
 
 The example I used before was Near Repeat victimization, in which the spatial and temporal distances between pairs of crimes are used to detect space-time interaction. The idea is that houses *nearby* a house that was burglarized have a higher chance to also be targeted for a short period after the first victimization. The distance between two events is most often calculated using the geometric distance, which, unrealistically, assumes the spatio-temporal process occurs on a continuous space. Measuring the distance between events via the road network seems more sensible, but can get quite complex (and requires up-to-date and high-quality road network data).
 
@@ -508,9 +508,7 @@ myplot(crow_vs_path_tbl_new, log = FALSE) +
 
 <img src="geometric-road-g4-short-distance-figures/unnamed-chunk-20-1.png" width="672" />
 
-This looks *vastly different* than my [previous blog post](https://www.woutersteenbeek.nl/post/geometric-road-distance-g4/)! While many node pairs are still at the lower end of the shortest path length, there are also **many** node pairs for which the road network shortest-path is a LOT longer than the euclidean distance. In case you're wondering, the Pearson's $r$ correlation between the raw values is 0.06.
-
-Let's inspect some of these strong outliers. I won't do anything fancy here, just select the 28 node pairs for which the shortest paths are longer than 2000 meters. Create a `tmap` object for plotting:
+This looks very different than my [previous blog post](https://www.woutersteenbeek.nl/post/geometric-road-distance-g4/)! While many node pairs are still at the lower end of the shortest path length, there are also *many* node pairs for which the road network shortest-path is a LOT longer than the euclidean distance. Let's inspect some of these strong outliers. I won't do anything fancy here, just select the 28 node pairs for which the shortest paths are longer than 2000 meters. Create a `tmap` object for plotting:
 
 
 ```r

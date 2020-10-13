@@ -69,7 +69,7 @@ waffle(license_tbl %>% mutate(Freq = Freq / 50), rows = 12,
   labs(subtitle = paste("Date:", format(Sys.Date(), "%b %d, %Y")))
 ```
 
-<img src="r-package-license_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="r-packages-license-figures/unnamed-chunk-2-1.png" width="672" />
 
 The same waffle chart as a 10x10 grid, with each cell representing 1%, looks like this:
 
@@ -81,7 +81,7 @@ waffle(license_tbl %>% mutate(Freq = round(Freq / sum(Freq) * 100)), rows = 10,
   labs(subtitle = paste("Date:", format(Sys.Date(), "%b %d, %Y")))
 ```
 
-<img src="r-package-license_files/figure-html/unnamed-chunk-3-1.png" width="480" />
+<img src="r-packages-license-figures/unnamed-chunk-3-1.png" width="480" />
 
 I wondered whether licensing of R packages differs by *Task View*. CRAN [Task Views](https://cran.r-project.org/web/views/) give an overview of which CRAN packages are relevant for tasks related to a certain topic. To create a waffle chart per Task View, I first need to match all packages from `available.packages()` to their Task View.
 
@@ -148,7 +148,7 @@ ggplot(prepped_data %>% filter(License == "GPL"), aes(x = prop, y = reorder(Task
   theme_minimal()
 ```
 
-<img src="r-package-license_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="r-packages-license-figures/unnamed-chunk-6-1.png" width="672" />
 
 While there are a few Task Views with a good proportion of packages with non-GPL licenses, many are dominated by GPL. Maybe I'll dive more deeply into the different GPL licenses in a future blog post, but for now I'll keep them lumped together. I'll select and plot the nine Task Views with the lowest number of GPL-licensed packages. Because they differ substantially in # of packages, I plot the waffle charts as proportions instead of raw counts:
 
@@ -184,7 +184,7 @@ prepped_data %>%
     theme(panel.grid = element_blank(), axis.ticks.y = element_line())
 ```
 
-<img src="r-package-license_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="r-packages-license-figures/unnamed-chunk-7-1.png" width="672" />
 
 Many R packages use a GPL license. These guarantee end users the freedom to run, study, share, and modify software. And they ensure the derivative work is distributed under the same or equivalence license terms, "paying it forward" so the whole community gets a chance to benefit from the new software. For companies that want to integrate code of R packages into their commercial products, this poses a potential problem. The other day I was reading [this blog post](https://r-posts.com/how-gpl-makes-me-leave-r-for-python/) by Hovav Dror. Simply put, the author, an employee for a private company, was leaving R for Python because many R packages use a strong GPL license (see [wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License) and the [GPL-3 license](https://www.gnu.org/licenses/gpl-3.0.html)). He writes:
 

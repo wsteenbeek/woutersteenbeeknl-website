@@ -171,7 +171,6 @@ prepped_data %>%
     scale_x_discrete() + 
     scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
                        expand = c(0,0)) +
-    # ggthemes::scale_fill_tableau(name=NULL) +
     scale_fill_brewer(name = NULL, palette = "Set2") +
     coord_equal() +
     labs(
@@ -199,7 +198,6 @@ prepped_data %>%
     scale_x_discrete() + 
     scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
                        expand = c(0,0)) +
-    # ggthemes::scale_fill_tableau(name=NULL) +
     scale_fill_brewer(name = NULL, palette = "Set2") +
     coord_equal() +
     labs(

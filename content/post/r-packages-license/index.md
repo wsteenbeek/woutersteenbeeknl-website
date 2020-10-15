@@ -210,7 +210,7 @@ prepped_data %>%
     theme(panel.grid = element_blank(), axis.ticks.y = element_blank())
 ```
 
-<img src="r-package-license-figures/unnamed-chunk-8-1.png" width="672" />
+<img src="r-packages-license-figures/unnamed-chunk-8-1.png" width="672" />
 
 
 Many R packages use a GPL license. These guarantee end users the freedom to run, study, share, and modify software. And they ensure the derivative work is distributed under the same or equivalence license terms, "paying it forward" so the whole community gets a chance to benefit from the new software. For companies that want to integrate code of R packages into their commercial products, this poses a potential problem. The other day I was reading [this blog post](https://r-posts.com/how-gpl-makes-me-leave-r-for-python/) by Hovav Dror. Simply put, the author, an employee for a private company, was leaving R for Python because many R packages use a strong GPL license (see [wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License) and the [GPL-3 license](https://www.gnu.org/licenses/gpl-3.0.html)). He writes:

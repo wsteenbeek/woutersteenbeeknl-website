@@ -6,7 +6,7 @@ authors: []
 tags: ["R", "visualization"]
 categories: []
 date: 2020-10-13T12:51:54+02:00
-lastmod: 2020-10-13T12:51:54+02:00
+lastmod: 2020-10-15T11:51:54+02:00
 featured: false
 draft: false
 ---
@@ -150,7 +150,7 @@ ggplot(prepped_data %>% filter(License == "GPL"), aes(x = prop, y = reorder(Task
 
 <img src="r-packages-license-figures/unnamed-chunk-6-1.png" width="672" />
 
-While there are a few Task Views with a good proportion of packages with non-GPL licenses, many are dominated by GPL. Maybe I'll dive more deeply into the different GPL licenses in a future blog post, but for now I'll keep them lumped together. I'll select and plot the nine Task Views with the lowest number of GPL-licensed packages. Because they differ substantially in # of packages, I plot the waffle charts as proportions instead of raw counts:
+While there are a few Task Views with a good proportion of packages with non-GPL licenses, many are dominated by GPL. Maybe I'll dive more deeply into the different GPL licenses in a future blog post, but for now I'll keep them lumped together. I'll select and plot the nine Task Views with the lowest number of GPL-licensed packages. 
 
 
 ```r
@@ -166,7 +166,7 @@ prepped_data %>%
   filter(TaskView %in% selected_taskviews) %>%
   ggplot(aes(fill = License, values = Freq)) +
     geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE,
-                make_proportional = TRUE) +
+                make_proportional = FALSE) +
     facet_wrap(~ factor(TaskView, levels = selected_taskviews), nrow = 3, strip.position = "bottom") +
     scale_x_discrete() + 
     scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
@@ -175,7 +175,7 @@ prepped_data %>%
     scale_fill_brewer(name = NULL, palette = "Set2") +
     coord_equal() +
     labs(
-      title = "Licensing of CRAN packages for Task Views\nwith the lowest proportion of GPL-licenses",
+      title = "Licensing of CRAN packages for Task Views with the\nlowest proportion of GPL-licenses (1 Square = 1 R Package)",
       subtitle = paste("Date:", format(Sys.Date(), "%b %d, %Y")),
       x = "Task View",
       y = "Count"
@@ -185,6 +185,35 @@ prepped_data %>%
 ```
 
 <img src="r-packages-license-figures/unnamed-chunk-7-1.png" width="672" />
+
+Because they differ substantially in # of packages, I'll also plot the waffle charts using proportions instead of raw counts.
+
+```r
+# Faceted waffle chart
+prepped_data %>% 
+  filter(TaskView %in% selected_taskviews) %>%
+  ggplot(aes(fill = License, values = Freq)) +
+    geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE,
+                make_proportional = TRUE) +
+    facet_wrap(~ factor(TaskView, levels = selected_taskviews), nrow = 3, strip.position = "bottom") +
+    scale_x_discrete() + 
+    scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
+                       expand = c(0,0)) +
+    # ggthemes::scale_fill_tableau(name=NULL) +
+    scale_fill_brewer(name = NULL, palette = "Set2") +
+    coord_equal() +
+    labs(
+      title = "Licensing of CRAN packages for Task Views with the\nlowest proportion of GPL-licenses (1 Square = 1 Percent)",
+      subtitle = paste("Date:", format(Sys.Date(), "%b %d, %Y")),
+      x = "Task View",
+      y = ""
+    ) +
+    theme_minimal() +
+    theme(panel.grid = element_blank(), axis.ticks.y = element_blank())
+```
+
+<img src="r-package-license-figures/unnamed-chunk-8-1.png" width="672" />
+
 
 Many R packages use a GPL license. These guarantee end users the freedom to run, study, share, and modify software. And they ensure the derivative work is distributed under the same or equivalence license terms, "paying it forward" so the whole community gets a chance to benefit from the new software. For companies that want to integrate code of R packages into their commercial products, this poses a potential problem. The other day I was reading [this blog post](https://r-posts.com/how-gpl-makes-me-leave-r-for-python/) by Hovav Dror. Simply put, the author, an employee for a private company, was leaving R for Python because many R packages use a strong GPL license (see [wikipedia](https://en.wikipedia.org/wiki/GNU_General_Public_License) and the [GPL-3 license](https://www.gnu.org/licenses/gpl-3.0.html)). He writes:
 

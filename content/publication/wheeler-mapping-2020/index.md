@@ -36,6 +36,6 @@ abstract: We illustrate how a machine learning algorithm, Random Forests, can pr
   techniques. We also show how recent advances in model summaries can help to open
   the ‘black box’ of Random Forests, considerably improving their interpretability.
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: https://doi.org/10.1007/s10940-020-09457-7
+# url_pdf: https://doi.org/10.1007/s10940-020-09457-7
 doi: 10.1007/s10940-020-09457-7
 ---

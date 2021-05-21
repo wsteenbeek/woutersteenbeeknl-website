@@ -14,6 +14,9 @@ lastmod: 2021-02-27T12:13:58+01:00
 featured: false
 draft: false
 
+url_preprint: https://osf.io/jwnqx/
+url_code: https://osf.io/z2347/
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.

@@ -37,5 +37,8 @@ abstract: We illustrate how a machine learning algorithm, Random Forests, can pr
   the ‘black box’ of Random Forests, considerably improving their interpretability.
 publication: '*Journal of Quantitative Criminology*'
 # url_pdf: https://doi.org/10.1007/s10940-020-09457-7
+
 doi: 10.1007/s10940-020-09457-7
+url_preprint: https://osf.io/preprints/socarxiv/xc538/
+url_code: https://www.dropbox.com/sh/b3n9a6z5xw14rd6/AAAjqnoMVKjzNQnWP9eu7M1ra?dl=0
 ---

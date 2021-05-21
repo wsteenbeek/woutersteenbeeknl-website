@@ -46,6 +46,8 @@ abstract: Andresen's spatial point pattern test (SPPT) compares two spatial poin
   areas where pedestrian stops by the New York City Police Department are different
   from violent crimes for 2006–2016.
 publication: '*Transactions in GIS*'
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/tgis.12341
+# url_pdf: 
+url_preprint: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3111822
+url_code: https://www.dropbox.com/s/j8bhyo5y994yyy0/Analysis_AltMethods_SPPT_Anony.zip?dl=0
 doi: 10.1111/tgis.12341
 ---

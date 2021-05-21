@@ -61,4 +61,5 @@ abstract: 'Background: A key issue in the analysis of many spatial processes is 
 publication: '*PLOS ONE*'
 # url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218324
 doi: 10.1371/journal.pone.0218324
+url_code: https://github.com/nickmalleson/Multi-Scale-Error-Analysis
 ---

@@ -45,6 +45,6 @@ abstract: While businesses may attract potential offenders and thus be conducive
   are not always better or worse). Our research demonstrates that the presence of
   neighborhood businesses could rival the effects of social disorganization theory.
 publication: '*Journal of Research in Crime and Delinquency*'
-url_pdf: https://doi.org/10.1177/0022427810397948
+# url_pdf: https://doi.org/10.1177/0022427810397948
 doi: 10.1177/0022427810397948
 ---

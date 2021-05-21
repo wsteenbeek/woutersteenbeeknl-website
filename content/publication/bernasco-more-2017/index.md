@@ -56,6 +56,6 @@ abstract: 'Objectives: The crime and place literature lacks a standard methodolo
   processes of crime concentration than the original versions. The generalized Lorenz
   curve, the Gini coefficient and its variance are easy to compute.'
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: https://doi.org/10.1007/s10940-016-9324-7
+# url_pdf: https://doi.org/10.1007/s10940-016-9324-7
 doi: 10.1007/s10940-016-9324-7
 ---

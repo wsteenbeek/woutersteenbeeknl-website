@@ -60,6 +60,6 @@ abstract: 'Objective: The introduction of bundled payment for diabetes care in t
   used. Currently applied benchmarking may have unfair consequences for some care
   groups.'
 publication: '*Health Services Research*'
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12483
+# url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.12483
 doi: 10.1111/1475-6773.12483
 ---

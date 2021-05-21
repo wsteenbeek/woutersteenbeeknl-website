@@ -51,6 +51,6 @@ abstract: This article contributes to the literature on political gerontology by
   capital with a robust positive impact on all dimensions of political participation
   was individual-level membership in voluntary associations.
 publication: '*Journal of International and Comparative Social Policy*'
-url_pdf: https://doi.org/10.1080/21699763.2015.1069207
+# url_pdf: https://doi.org/10.1080/21699763.2015.1069207
 doi: 10.1080/21699763.2015.1069207
 ---

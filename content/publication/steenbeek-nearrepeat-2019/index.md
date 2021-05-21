@@ -38,5 +38,5 @@ abstract: 'NearRepeat is an R package uses the Knox test for space-time clusteri
   thereafter), but also the ‘near repeat’ victims: nearby people or locations that
   are victimized within a short period after the first crime.'
 publication: ''
-url_pdf: https://github.com/wsteenbeek/NearRepeat
+url_code: https://github.com/wsteenbeek/NearRepeat
 ---

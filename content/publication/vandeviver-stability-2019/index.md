@@ -58,6 +58,6 @@ abstract: 'Objectives: To examine the spatial concentration and spatial stabilit
   crime drop can be tied to substantial decreases in a few specific places, nor do
   we find that the reductions in burglary are spatially concentrated.'
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: https://doi.org/10.1007/s10940-017-9371-8
+# url_pdf: https://doi.org/10.1007/s10940-017-9371-8
 doi: 10.1007/s10940-017-9371-8
 ---

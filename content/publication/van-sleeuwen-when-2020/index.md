@@ -51,6 +51,6 @@ abstract: 'Objectives: Building on Hägerstrand’s time geography, we expect te
   might prove valuable for improving predictive policing methods and crime linkage
   analysis as well as interventions to reduce recidivism.'
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: http://link.springer.com/10.1007/s10940-020-09470-w
+# url_pdf: http://link.springer.com/10.1007/s10940-020-09470-w
 doi: 10.1007/s10940-020-09470-w
 ---

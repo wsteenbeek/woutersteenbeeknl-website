@@ -34,6 +34,6 @@ publication_types:
 - 2
 abstract: ''
 publication: '*Crime Science*'
-url_pdf: https://doi.org/10.1186/s40163-021-00139-8
+# url_pdf: https://doi.org/10.1186/s40163-021-00139-8
 doi: 10.1186/s40163-021-00139-8
 ---

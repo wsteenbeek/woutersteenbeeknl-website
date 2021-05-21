@@ -43,6 +43,6 @@ abstract: Using a longitudinal data set of 317 neighborhoods from 1996 to 2002 i
   (a crime that occurs in private space) appear to increase residents’ sense of feeling
   responsibility for the neighborhood.
 publication: '*Crime & Delinquency*'
-url_pdf: https://doi.org/10.1177/0011128715604168
+# url_pdf: https://doi.org/10.1177/0011128715604168
 doi: 10.1177/0011128715604168
 ---

@@ -50,6 +50,6 @@ abstract: 'A lack of collective efficacy in neighborhoods is associated with soc
   mobility, and a relatively low local income level are negatively related to the
   rate of posted letters.'
 publication: '*Social Forces*'
-url_pdf: https://academic.oup.com/sf/article/94/3/953/2461984
+# url_pdf: https://academic.oup.com/sf/article/94/3/953/2461984
 doi: 10.1093/sf/sov106
 ---

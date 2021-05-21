@@ -49,6 +49,6 @@ abstract: 'Objectives: Introduce a systematic method to identify areas with simi
   that randomized controlled trials of order maintenance policing should be performed
   on these new areas rather than in hot spots of disorder.'
 publication: '*Journal of Research in Crime and Delinquency*'
-url_pdf: https://doi.org/10.1177/0022427815580166
+# url_pdf: https://doi.org/10.1177/0022427815580166
 doi: 10.1177/0022427815580166
 ---

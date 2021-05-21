@@ -57,6 +57,6 @@ abstract: Social disorganization theory holds that neighborhoods with greater re
   control into the two dimensions of the potential for social control and the actual
   social control behavior.
 publication: '*Criminology*'
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.2011.00241.x
+# url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1745-9125.2011.00241.x
 doi: 10.1111/j.1745-9125.2011.00241.x
 ---

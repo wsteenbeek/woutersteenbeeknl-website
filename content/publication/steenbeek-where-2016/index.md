@@ -58,6 +58,6 @@ abstract: 'Objectives: To identify how much of the variability of crime in a cit
   have received little criminological focus so far. Moreover, our results raise a
   strong challenge to recent focus on such meso geographic units as census block groups.'
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: https://doi.org/10.1007/s10940-015-9276-3
+# url_pdf: https://doi.org/10.1007/s10940-015-9276-3
 doi: 10.1007/s10940-015-9276-3
 ---

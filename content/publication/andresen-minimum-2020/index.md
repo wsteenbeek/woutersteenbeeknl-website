@@ -56,6 +56,6 @@ abstract: The analysis of geographically referenced data, specifically point dat
   that the necessary levels of geocoding success are lower than found in previous
   research. This finding is consistent across different national contexts.
 publication: '*International Journal of Geographical Information Science*'
-url_pdf: https://doi.org/10.1080/13658816.2020.1725015
+# url_pdf: https://doi.org/10.1080/13658816.2020.1725015
 doi: 10.1080/13658816.2020.1725015
 ---

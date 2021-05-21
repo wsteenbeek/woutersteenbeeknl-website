@@ -50,6 +50,6 @@ abstract: Account hijacking, i.e. illegitimately accessing someone else’s pers
   We conclude with policy implications and suggestions for future research based on
   the criminal event perspective.
 publication: '*Journal of Crime and Justice*'
-url_pdf: https://doi.org/10.1080/0735648X.2019.1692418
+# url_pdf: https://doi.org/10.1080/0735648X.2019.1692418
 doi: 10.1080/0735648X.2019.1692418
 ---

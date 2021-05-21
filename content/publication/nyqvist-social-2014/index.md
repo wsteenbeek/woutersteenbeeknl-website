@@ -63,6 +63,6 @@ abstract: 'Background: Social capital can be conceptualised as an individual res
   defining social capital at the collective level, such as the inclusion of neighbourhood
   social capital, could be one direction for future research.'
 publication: '*International Journal of Behavioral Medicine*'
-url_pdf: https://doi.org/10.1007/s12529-013-9307-0
+# url_pdf: https://doi.org/10.1007/s12529-013-9307-0
 doi: 10.1007/s12529-013-9307-0
 ---

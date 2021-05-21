@@ -56,6 +56,6 @@ abstract: 'Objectives: To quantitatively test findings from offender-based liter
   to consider using GSV as a method of collecting fresh data, with the broader aim
   of explaining criminal behaviour at micro-spatial scales.'
 publication: '*Applied Geography*'
-url_pdf: http://www.sciencedirect.com/science/article/pii/S0143622816304970
+# url_pdf: http://www.sciencedirect.com/science/article/pii/S0143622816304970
 doi: 10.1016/j.apgeog.2017.06.014
 ---

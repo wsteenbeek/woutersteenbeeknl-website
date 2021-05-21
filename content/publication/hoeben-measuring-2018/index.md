@@ -59,6 +59,6 @@ abstract: 'Objectives: The present study focuses on Systematic Social Observatio
   to their data collection by selecting a minimum number of observers, offering extensive
   training, and collecting information on the urban background of the observers.'
 publication: '*Journal of Quantitative Criminology*'
-url_pdf: https://doi.org/10.1007/s10940-016-9333-6
+# url_pdf: https://doi.org/10.1007/s10940-016-9333-6
 doi: 10.1007/s10940-016-9333-6
 ---

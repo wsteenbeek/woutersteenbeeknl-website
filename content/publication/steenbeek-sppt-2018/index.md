@@ -40,5 +40,5 @@ abstract: sppt is an R package that implements several Spatial Point Pattern Tes
   these distributions. One advantage of the tests is that they can be performed for
   a number of different area boundaries using the same original point datasets.
 publication: ''
-url_pdf: https://github.com/wsteenbeek/sppt
+url_code: https://github.com/wsteenbeek/sppt
 ---

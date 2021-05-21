@@ -54,6 +54,6 @@ abstract: Many organizations are currently deciding whether to insource or outso
   as well as sourcing relationship. The research method that was used proved to be
   helpful in the explicitation of knowledge of consultants but needs further refinement.
 publication: '*Collaboration in Outsourcing: A Journey to Quality*'
-url_pdf: https://doi.org/10.1057/9780230362994_6
+# url_pdf: https://doi.org/10.1057/9780230362994_6
 doi: 10.1057/9780230362994_6
 ---

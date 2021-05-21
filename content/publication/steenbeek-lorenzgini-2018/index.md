@@ -44,5 +44,5 @@ abstract: lorenzgini is an R package that calculcates the standard Gini coeffici
   the original Gini coefficient as the number of crimes approaches the number of spatial
   units.
 publication: ''
-url_pdf: https://github.com/wsteenbeek/lorenzgini
+url_code: https://github.com/wsteenbeek/lorenzgini
 ---

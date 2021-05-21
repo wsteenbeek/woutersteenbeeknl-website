@@ -40,6 +40,6 @@ abstract: A recent PNAS article (1) argues that success rates for attaining rese
   for both men and women), then an analysis across all disciplines could incorrectly
   show “evidence” of gender inequality. Indeed, the social sciences …
 publication: '*Proceedings of the National Academy of Sciences*'
-url_pdf: https://www.pnas.org/content/112/51/E7036
+# url_pdf: https://www.pnas.org/content/112/51/E7036
 doi: 10.1073/pnas.1519046112
 ---

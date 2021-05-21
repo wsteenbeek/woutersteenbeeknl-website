@@ -49,6 +49,6 @@ abstract: By emphasising that businesses attract offenders or generate ‘eyes o
   neighbourhood order because they spend much time locally and thus have many opportunities
   to turn their willingness into action on behalf of the neighbourhood.
 publication: '*Tijdschrift voor economische en sociale geografie*'
-url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/tesg.12092
+# url_pdf: https://onlinelibrary.wiley.com/doi/abs/10.1111/tesg.12092
 doi: 10.1111/tesg.12092
 ---

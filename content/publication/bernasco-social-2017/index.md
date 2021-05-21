@@ -43,6 +43,7 @@ abstract: Using data on the age, sex, ethnicity, and criminal involvement of mor
   and for sorting behavior. We find significant social interaction effects, but our
   findings do not imply multiple equilibria or large multiplier effects.
 publication: '*The Review of Economics and Statistics*'
-url_pdf: https://doi.org/10.1162/REST_a_00656
+# url_pdf: https://doi.org/10.1162/REST_a_00656
 doi: 10.1162/REST_a_00656
+url_code: https://doi.org/10.7910/DVN/3SLMJY
 ---

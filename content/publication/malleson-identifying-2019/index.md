@@ -59,6 +59,6 @@ abstract: 'Background: A key issue in the analysis of many spatial processes is 
   not identified. The method is nevertheless useful as a means of better estimating
   what spatial scale might be appropriate for a particular piece of analysis.'
 publication: '*PLOS ONE*'
-url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218324
+# url_pdf: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218324
 doi: 10.1371/journal.pone.0218324
 ---

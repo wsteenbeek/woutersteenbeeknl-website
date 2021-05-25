@@ -75,5 +75,3 @@ subtitle = ""
  css_class = ""
 +++
 
-When I think it may be helpful to others, I publish my code as a software package. I have published the following R packages:
-<br>
